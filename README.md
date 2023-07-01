@@ -22,6 +22,9 @@ PROJECT DESCRIPTION -- I was provided with the HTML document and existing CSS st
 ![PW length](./images/2b%20-%20pw%20length.png)
 ![PW length confirmation](./images/2c%20-%20pw%20length%20confirmation.png)
 ![Sample of character set selector](./images/3%20-%20sample%20of%20character%20set%20selection.png)
+![Sample of character set selector](./images/3a-lowercase.png)
+![Sample of character set selector](./images/3b-uppercase.png)
+![Sample of character set selector](./images/3c-numbers.png)
 ![final PW generated](./images/4%20-%20final%20pw%20generated.png)
 
 Work completed:
@@ -38,8 +41,14 @@ Webpage deployed online is accessible through a web browser like Google Chrome.
 
 ## Learning Points 
 
-- WRITE WHAT I LEARNED.
-- 
+- Create variables and apply them to javascript functions.
+- Create an array for a variable
+- Prompt the user with javascript
+- Implement an if/else statement
+- Concat arrays
+- Alert the user if something isn't correct
+- Math.floor will round down and Math.ceil will round up
+- Research, reading, instruction and study groups are crucial to success
 
 ## Author Info
 
