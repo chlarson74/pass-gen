@@ -22,13 +22,14 @@ function writePassword() {
 
 function generatePassword() {
     //clearing arrays
+    var password = "";
     listChar = [];
 
     //prompt user for length of password characters
     var charLength  = parseInt(prompt("Choose the length of your password. Between 8 and 128 characters"));
     // be sure that the user followed instructions
     if (charLength >= 8 && charLength <=128) {
-        alert("Your password is " + charLength + " long.");
+        alert("Your password is " + charLength + " characters long.");
     // if user didn't indictate a correct length return to start    
     } else {
         alert("Please choose a number between 8 and 128");
@@ -41,22 +42,35 @@ function generatePassword() {
         listChar=listChar.concat(specialChar);
     }
    //confirm lowercase character
-   var confirmLow = confirm("Use special characters?");
+   var confirmLow = confirm("Use lowercase characters?");
    if (confirmLow) {
        listChar=listChar.concat(lowerCaseChar);
    }
    //confirm upppercase character
-   var confirmUpper = confirm("Use special characters?");
+   var confirmUpper = confirm("Use uppercase characters?");
    if (confirmUpper) {
        listChar=listChar.concat(upperCaseChar);
    }
    //confirm number character
-   var confirmNumber = confirm("Use special characters?");
+   var confirmNumber = confirm("Use number characters?");
    if (confirmNumber) {
        listChar=listChar.concat(numberChar);
    }
 
+   //alert that at least one selector has to be chosen
+   if (listChar.length===0) {
+    alert("At least one character type must be selected");
+    return
+   }
+   //math random and math floor are used to create the random password based on user's choices
+   for (var i = 0; i < charLength; i++) {
+    var randomIndex = Math.floor(Math.random() * charactersLength);
+    password += listChar.charAt(randomIndex);
+  }
+  return password;
 }
+
+generateBtn.addEventListener("click", writePassword);
 
 //PSEUDOCODE PLANNING NOTES:
 //PHASE ONE
