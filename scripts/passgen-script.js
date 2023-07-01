@@ -6,20 +6,6 @@ var upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 var numberChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var listChar = [];
 
-//code provided by UCB bootcamp
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input -- code provided by UCB bootcamp
-function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-  
-    passwordText.value = password;
-  
-  }
- // end code provided by UCB bootcamp
- 
-
 function generatePassword() {
     //clearing arrays
     var password = "";
@@ -62,13 +48,36 @@ function generatePassword() {
     alert("At least one character type must be selected");
     return
    }
-   //math random and math floor are used to create the random password based on user's choices
+//    //researched at stackoverflow and chatgpt - the code generated below is implemented and customized from that research
+//    var charactersLength = listChar.length;
+//    var passwordLength = Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;
+//    var password = '';
+//    //math random and math floor are used to create the random password based on user's choices
+//    for (var i = 0; i < passwordLength; i++) {
+//     var randomIndex = Math.floor(Math.random() * charactersLength);
+//     password += listChar.charAt(randomIndex);
+//   }
+   //coding advice through study group and online research
    for (var i = 0; i < charLength; i++) {
-    var randomIndex = Math.floor(Math.random() * charactersLength);
-    password += listChar.charAt(randomIndex);
-  }
+    var charIndex = Math.floor(Math.random()*listChar.length);
+    password += listChar[charIndex];
+   }
+
   return password;
 }
+
+//code provided by UCB bootcamp
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input -- code provided by UCB bootcamp
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;
+  
+  }
+ // end code provided by UCB bootcamp
 
 generateBtn.addEventListener("click", writePassword);
 
